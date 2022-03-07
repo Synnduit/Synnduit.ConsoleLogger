@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B57D52A0-ECF6-4FCC-89FA-AC5CA2EB24AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Synnduit.ConsoleLogger", "src\Synnduit.ConsoleLogger\Synnduit.ConsoleLogger.csproj", "{1B5A5787-CAD1-4B53-A376-E7243972F318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B5A5787-CAD1-4B53-A376-E7243972F318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5A5787-CAD1-4B53-A376-E7243972F318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5A5787-CAD1-4B53-A376-E7243972F318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5A5787-CAD1-4B53-A376-E7243972F318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B5A5787-CAD1-4B53-A376-E7243972F318} = {B57D52A0-ECF6-4FCC-89FA-AC5CA2EB24AB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4808B85C-DDCD-4955-AD56-3E96960F2EC5}
+	EndGlobalSection
+EndGlobal
