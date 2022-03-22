@@ -67,11 +67,14 @@ namespace Synnduit.Logging
         /// <param name="args">The event data.</param>
         public override void OnSegmentExecuting(ISegmentExecutingArgs args)
         {
+            this.segmentProcessingTime = DateTime.Now; //KHB
             Console.WriteLine();
             Console.WriteLine(
                 Resources.SegmentExecuting,
                 this.Context.SegmentIndex,
                 this.Context.SegmentCount);
+            Console.Write("  {0}: ", Resources.SegmentStartTime); //KHB
+            this.PrintLine(segmentProcessingTime.ToString("o"), ConsoleColor.Cyan); //KHB
             Console.Write("  {0}: ", Resources.Type);
             this.PrintLine(this.GetLabel(this.Context.SegmentType), ConsoleColor.Cyan);
             if(this.Context.SourceSystem != null)
@@ -92,6 +95,7 @@ namespace Synnduit.Logging
         /// <param name="args">The event data.</param>
         public override void OnSegmentExecuted(ISegmentExecutedArgs args)
         {
+            Console.WriteLine(this.GetLabel(Resources.SegmentDuration), (DateTime.Now - this.segmentProcessingTime).TotalSeconds); //KHB
             if(this.Context.SegmentType == SegmentType.Migration)
             {
                 this.entitiesProcessed = this.entityCount;
