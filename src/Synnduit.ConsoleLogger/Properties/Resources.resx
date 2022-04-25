@@ -213,8 +213,14 @@
   <data name="ResultFormat" xml:space="preserve">
     <value>#,##0</value>
   </data>
+  <data name="SegmentDuration" xml:space="preserve">
+    <value>Segment duration {0} seconds</value>
+  </data>
   <data name="SegmentExecuting" xml:space="preserve">
     <value>Segment {0} out of {1}:</value>
+  </data>
+  <data name="SegmentStartTime" xml:space="preserve">
+    <value>Start Time</value>
   </data>
   <data name="Skipped" xml:space="preserve">
     <value>Skipped</value>
