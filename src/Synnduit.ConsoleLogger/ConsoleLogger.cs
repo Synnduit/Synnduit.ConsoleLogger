@@ -43,6 +43,8 @@ namespace Synnduit.Logging
 
         private DateTime lastRefreshDateTime;
 
+        private DateTime segmentProcessingTime;
+
         /// <summary>
         /// Initializes a new instance of the class.
         /// </summary>

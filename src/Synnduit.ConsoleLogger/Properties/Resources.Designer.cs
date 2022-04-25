@@ -349,11 +349,29 @@ namespace Synnduit.Logging.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Segment duration {0} seconds.
+        /// </summary>
+        internal static string SegmentDuration {
+            get {
+                return ResourceManager.GetString("SegmentDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Segment {0} out of {1}:.
         /// </summary>
         internal static string SegmentExecuting {
             get {
                 return ResourceManager.GetString("SegmentExecuting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Time.
+        /// </summary>
+        internal static string SegmentStartTime {
+            get {
+                return ResourceManager.GetString("SegmentStartTime", resourceCulture);
             }
         }
         
