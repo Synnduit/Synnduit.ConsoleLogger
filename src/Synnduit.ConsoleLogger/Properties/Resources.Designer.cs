@@ -223,6 +223,15 @@ namespace Synnduit.Logging.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the segment has been aborted..
+        /// </summary>
+        internal static string GarbageCollectionAbortedFormat {
+            get {
+                return ResourceManager.GetString("GarbageCollectionAbortedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Identifying entities to delete ... .
         /// </summary>
         internal static string IdentifyingEntitiesToDelete {
@@ -304,6 +313,15 @@ namespace Synnduit.Logging.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the segment has been aborted..
+        /// </summary>
+        internal static string OrphanMappingsProcessingAbortedFormat {
+            get {
+                return ResourceManager.GetString("OrphanMappingsProcessingAbortedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0:#.00}%.
         /// </summary>
         internal static string ProgressFormat {
@@ -345,6 +363,24 @@ namespace Synnduit.Logging.Properties {
         internal static string ResultFormat {
             get {
                 return ResourceManager.GetString("ResultFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0} exceptions has been reached, and the run has been aborted..
+        /// </summary>
+        internal static string RunAbortedFormat {
+            get {
+                return ResourceManager.GetString("RunAbortedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0} exceptions has been reached, and the segment has been aborted..
+        /// </summary>
+        internal static string SegmentAbortedFormat {
+            get {
+                return ResourceManager.GetString("SegmentAbortedFormat", resourceCulture);
             }
         }
         
