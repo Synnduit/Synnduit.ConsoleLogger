@@ -171,6 +171,9 @@
   <data name="GarbageCollection" xml:space="preserve">
     <value>Garbage Collection</value>
   </data>
+  <data name="GarbageCollectionAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the segment has been aborted.</value>
+  </data>
   <data name="IdentifyingEntitiesToDelete" xml:space="preserve">
     <value>Identifying entities to delete ... </value>
   </data>
@@ -198,6 +201,9 @@
   <data name="NotFoundInDestinationSystem" xml:space="preserve">
     <value>Not found in destination system</value>
   </data>
+  <data name="OrphanMappingsProcessingAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the segment has been aborted.</value>
+  </data>
   <data name="ProgressFormat" xml:space="preserve">
     <value>{0:#.00}%</value>
   </data>
@@ -212,6 +218,12 @@
   </data>
   <data name="ResultFormat" xml:space="preserve">
     <value>#,##0</value>
+  </data>
+  <data name="RunAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0} exceptions has been reached, and the run has been aborted.</value>
+  </data>
+  <data name="SegmentAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0} exceptions has been reached, and the segment has been aborted.</value>
   </data>
   <data name="SegmentDuration" xml:space="preserve">
     <value>Segment duration {0} seconds</value>

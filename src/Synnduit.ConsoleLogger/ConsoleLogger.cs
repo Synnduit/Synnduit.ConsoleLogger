@@ -109,7 +109,7 @@ namespace Synnduit.Logging
             Console.WriteLine();
             if(this.Context.SegmentIndex < this.Context.SegmentCount)
             {
-                Console.WriteLine(" --- ");
+                this.PrintSegmentSeparator();
             }
         }
 
@@ -245,6 +245,17 @@ namespace Synnduit.Logging
         }
 
         /// <summary>
+        /// Called then the processing of orphan mappings has been aborted.
+        /// </summary>
+        /// <param name="args">The event data.</param>
+        public override void OnOrphanMappingsProcessingAborted(
+            IOrphanMappingsProcessingAbortedArgs args)
+        {
+            PrintPercentageThresholdAbortedMessage(
+                Resources.OrphanMappingsProcessingAbortedFormat, args);
+        }
+
+        /// <summary>
         /// Called when orphan identifier mappings are about to be processed.
         /// </summary>
         /// <param name="args">The event data.</param>
@@ -270,6 +281,15 @@ namespace Synnduit.Logging
                 this.PrintOrphanMappingsProgress();
                 this.lastRefreshDateTime = DateTime.Now;
             }
+        }
+
+        /// <summary>
+        /// Called when a garbage collection run segment has been aborted.
+        /// </summary>
+        /// <param name="args">The event data.</param>
+        public override void OnGarbageCollectionAborted(IGarbageCollectionAbortedArgs args)
+        {
+            PrintPercentageThresholdAbortedMessage(Resources.GarbageCollectionAbortedFormat, args);
         }
 
         /// <summary>
@@ -317,6 +337,25 @@ namespace Synnduit.Logging
                 this.PrintEntityDeletionProgress();
                 this.lastRefreshDateTime = DateTime.Now;
             }
+        }
+
+        /// <summary>
+        /// Called when a run segment has been aborted.
+        /// </summary>
+        /// <param name="args">The event data.</param>
+        public override void OnSegmentAborted(ISegmentAbortedArgs args)
+        {
+            this.PrintCountThresholdAbortedMessage(Resources.SegmentAbortedFormat, args);
+            this.PrintSegmentSeparator();
+        }
+
+        /// <summary>
+        /// Called when the run has been aborted.
+        /// </summary>
+        /// <param name="args">The event data.</param>
+        public override void OnRunAborted(IRunAbortedArgs args)
+        {
+            this.PrintCountThresholdAbortedMessage(Resources.RunAbortedFormat, args);
         }
 
         private void PrintVariableCountOutcome(
@@ -487,6 +526,30 @@ namespace Synnduit.Logging
             this.deletionProgressCoordinates.PrintAndReturn(
                 string.Format(Resources.ProgressFormat, deletionProgress),
                 ConsoleColor.Green);
+        }
+
+        private void PrintPercentageThresholdAbortedMessage(
+            string format, IPercentageThresholdAbortedArgs args)
+        {
+            Console.WriteLine();
+            this.PrintLine(
+                string.Format(format, args.Threshold * 100.0d, args.Percentage * 100.0d),
+                ConsoleColor.Red);
+            Console.WriteLine();
+        }
+
+        private void PrintCountThresholdAbortedMessage(
+            string format, ICountThresholdAbortedArgs args)
+        {
+            this.PrintResults();
+            Console.WriteLine();
+            this.PrintLine(string.Format(format, args.Threshold), ConsoleColor.Red);
+            Console.WriteLine();
+        }
+
+        private void PrintSegmentSeparator()
+        {
+            Console.WriteLine(" --- ");
         }
 
         private class Coordinates
