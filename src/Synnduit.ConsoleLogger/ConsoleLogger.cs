@@ -1,5 +1,7 @@
-﻿using Synnduit.Events;
+﻿using Synnduit.Configuration;
+using Synnduit.Events;
 using Synnduit.Logging.Properties;
+using System.ComponentModel.Composition;
 
 namespace Synnduit.Logging
 {
@@ -48,7 +50,8 @@ namespace Synnduit.Logging
         /// <summary>
         /// Initializes a new instance of the class.
         /// </summary>
-        public ConsoleLogger()
+        [ImportingConstructor]
+        public ConsoleLogger(IConfigurationProvider configurationProvider)
         {
             this.entityTransactionOutcomes = this.GetEntityTransactionOutcomes();
             this.aggregateResults = this.GetAggregateResults();
@@ -58,9 +61,23 @@ namespace Synnduit.Logging
             this.resultCoordinates = null;
             this.migrationProgressCoordinates = null;
 
+            if (!GetBooleanSetting("SuppressConsoleSetBufferSize"))
+            {
 #pragma warning disable CA1416 // Validate platform compatibility
-            Console.SetBufferSize(Console.BufferWidth, short.MaxValue - 1);
+                Console.SetBufferSize(Console.BufferWidth, short.MaxValue - 1);
 #pragma warning restore CA1416 // Validate platform compatibility
+            }
+
+            if (GetBooleanSetting("ClearConsoleBetweenSegments"))
+            {
+                Console.Clear();
+            }
+
+            bool GetBooleanSetting(string name)
+            {
+                bool.TryParse(configurationProvider.Configuration[name], out bool value);
+                return value;
+            }
         }
 
         /// <summary>
