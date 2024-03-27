@@ -558,7 +558,14 @@ namespace Synnduit.Logging
         private void PrintCountThresholdAbortedMessage(
             string format, ICountThresholdAbortedArgs args)
         {
-            this.PrintResults();
+            if (this.Context.SegmentType == SegmentType.Migration)
+            {
+                this.PrintResults();
+            }
+            else if (this.Context.SegmentType == SegmentType.GarbageCollection)
+            {
+                this.PrintEntityDeletionProgress();
+            }
             Console.WriteLine();
             this.PrintLine(string.Format(format, args.Threshold), ConsoleColor.Red);
             Console.WriteLine();
