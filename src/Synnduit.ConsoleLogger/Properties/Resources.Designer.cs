@@ -223,11 +223,20 @@ namespace Synnduit.Logging.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the run has been aborted..
+        /// </summary>
+        internal static string GarbageCollectionRunAbortedFormat {
+            get {
+                return ResourceManager.GetString("GarbageCollectionRunAbortedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the segment has been aborted..
         /// </summary>
-        internal static string GarbageCollectionAbortedFormat {
+        internal static string GarbageCollectionSegmentAbortedFormat {
             get {
-                return ResourceManager.GetString("GarbageCollectionAbortedFormat", resourceCulture);
+                return ResourceManager.GetString("GarbageCollectionSegmentAbortedFormat", resourceCulture);
             }
         }
         
@@ -313,11 +322,20 @@ namespace Synnduit.Logging.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the run has been aborted..
+        /// </summary>
+        internal static string OrphanMappingsProcessingRunAbortedFormat {
+            get {
+                return ResourceManager.GetString("OrphanMappingsProcessingRunAbortedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the segment has been aborted..
         /// </summary>
-        internal static string OrphanMappingsProcessingAbortedFormat {
+        internal static string OrphanMappingsProcessingSegmentAbortedFormat {
             get {
-                return ResourceManager.GetString("OrphanMappingsProcessingAbortedFormat", resourceCulture);
+                return ResourceManager.GetString("OrphanMappingsProcessingSegmentAbortedFormat", resourceCulture);
             }
         }
         

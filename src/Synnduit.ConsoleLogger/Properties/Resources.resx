@@ -171,7 +171,10 @@
   <data name="GarbageCollection" xml:space="preserve">
     <value>Garbage Collection</value>
   </data>
-  <data name="GarbageCollectionAbortedFormat" xml:space="preserve">
+  <data name="GarbageCollectionRunAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the run has been aborted.</value>
+  </data>
+  <data name="GarbageCollectionSegmentAbortedFormat" xml:space="preserve">
     <value>The threshold of {0:F}% entities identified for deletion has been reached (actual percentage identified: {1:F}%), and the segment has been aborted.</value>
   </data>
   <data name="IdentifyingEntitiesToDelete" xml:space="preserve">
@@ -201,7 +204,10 @@
   <data name="NotFoundInDestinationSystem" xml:space="preserve">
     <value>Not found in destination system</value>
   </data>
-  <data name="OrphanMappingsProcessingAbortedFormat" xml:space="preserve">
+  <data name="OrphanMappingsProcessingRunAbortedFormat" xml:space="preserve">
+    <value>The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the run has been aborted.</value>
+  </data>
+  <data name="OrphanMappingsProcessingSegmentAbortedFormat" xml:space="preserve">
     <value>The threshold of {0:F}% orphan mappings identified for deactivation/removal has been reached (actual percentage identified: {1:F}%), and the segment has been aborted.</value>
   </data>
   <data name="ProgressFormat" xml:space="preserve">

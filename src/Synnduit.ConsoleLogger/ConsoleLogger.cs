@@ -269,7 +269,10 @@ namespace Synnduit.Logging
             IOrphanMappingsProcessingAbortedArgs args)
         {
             PrintPercentageThresholdAbortedMessage(
-                Resources.OrphanMappingsProcessingAbortedFormat, args);
+                args.RunAborted
+                    ? Resources.OrphanMappingsProcessingRunAbortedFormat
+                    : Resources.OrphanMappingsProcessingSegmentAbortedFormat,
+                args);
         }
 
         /// <summary>
@@ -306,7 +309,11 @@ namespace Synnduit.Logging
         /// <param name="args">The event data.</param>
         public override void OnGarbageCollectionAborted(IGarbageCollectionAbortedArgs args)
         {
-            PrintPercentageThresholdAbortedMessage(Resources.GarbageCollectionAbortedFormat, args);
+            PrintPercentageThresholdAbortedMessage(
+                args.RunAborted
+                    ? Resources.GarbageCollectionRunAbortedFormat
+                    : Resources.GarbageCollectionSegmentAbortedFormat,
+                args);
         }
 
         /// <summary>
