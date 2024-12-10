@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Synnduit.Logging</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.8.0</Version>
+    <Version>0.9.0</Version>
     <RepositoryUrl>https://github.com/Synnduit/Synnduit.ConsoleLogger</RepositoryUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
-    <PackageReference Include="Synnduit.Core" Version="0.8.0" />
+    <PackageReference Include="Synnduit.Core" Version="0.9.0" />
   </ItemGroup>
 
   <ItemGroup>
